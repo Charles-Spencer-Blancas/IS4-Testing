@@ -1,0 +1,9 @@
+curl command to get bearer token:
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -H "Cache-Control: no-cache" -d 'client_id=m2m.client&scope=weatherapi.read&client_secret=SuperSecretPassword&grant_type=client_credentials' -k "https://localhost:5444/connect/token"
+
+curl command to run weather api:
+curl -X Get -H "Authorization: Bearer {token, remove braces after}" -H "Cache-Control: no-cache" -k "https://localhost:5445/weatherforecast"
+
+Clients vs Users:
+Clients request tokens from the IdentityServer. A client needs to be registered before it can request tokens.
+Users are the ones using the clients.
